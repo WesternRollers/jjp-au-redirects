@@ -26,12 +26,17 @@
         if (redirects[path]) {
             window.location.href = redirects[path];
         } else {
-            // Fallback for unknown paths
+            // Redirect to janjucpark.com.au for unknown paths
+            window.location.href = 'https://janjucpark.com.au';
+
+            // Old fallback logic (commented out for reference):
+            /*
             document.write(`
                 <h1>404 Not Found</h1>
                 <p>The link you are looking for does not exist. <a href="/">Go back to the homepage</a>.</p>
             `);
             console.error(`Invalid path: ${path}`);
+            */
         }
     </script>
 </head>
