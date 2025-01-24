@@ -4,7 +4,6 @@
     <script>
         const redirects = {
             '/jsa': 'https://drive.google.com/file/d/1-bgrtQTD1CK8NL5SzAZPuNI6wbAa3Azx/view?usp=sharing',
-            '/EMP': 'https://docs.google.com/document/d/14BaM2DcWJz01yNfy60SLHbxc5i503_TG/edit?usp=sharing&ouid=100457028433399156928&rtpof=true&sd=true',
             '/emp': 'https://docs.google.com/document/d/14BaM2DcWJz01yNfy60SLHbxc5i503_TG/edit?usp=sharing&ouid=100457028433399156928&rtpof=true&sd=true',
             '/map': 'https://drive.google.com/file/d/13Xv09rbDqXuGQ2p1jBLeLcCnRMyA_2Yd/view?usp=sharing',
             '/pool': 'https://forms.gle/v2WPT7bUkgutGv3RA',
@@ -13,7 +12,6 @@
             '/nom': 'https://forms.gle/tNmM3gu9KyfewC2u8',
             '/electrical': 'https://forms.gle/hkArWgWAxg8eusmz5',
             '/incident': 'https://forms.gle/h1s6yt5UQtW6AStf8',
-            '/Incident': 'https://forms.gle/h1s6yt5UQtW6AStf8',
             '/poolemp': 'https://docs.google.com/document/d/1432iGD2lQPNNEbE35B90FfxbS2t14PPT/edit?usp=sharing&ouid=100457028433399156928&rtpof=true&sd=true',
             '/parkagreement': 'https://drive.google.com/file/d/1bOoT9ECHKdzGyj_iiy4EhIw1-v5Gf9Dj/view?usp=sharing',
             '/agreement': 'https://drive.google.com/file/d/1bOoT9ECHKdzGyj_iiy4EhIw1-v5Gf9Dj/view?usp=sharing',
@@ -21,11 +19,17 @@
             '/rules': 'https://drive.google.com/file/d/11TwhpaTPvpldIhP6NkRA4D4eyLFdqYEy/view?usp=sharing'
         };
 
-        const path = window.location.pathname;
+        // Make path matching case-insensitive
+        const path = window.location.pathname.toLowerCase();
         if (redirects[path]) {
             window.location.href = redirects[path];
         } else {
-            document.write('<h1>404 Not Found</h1><p>This link does not exist.</p>');
+            // Fallback for unknown paths
+            document.write(`
+                <h1>404 Not Found</h1>
+                <p>The link you are looking for does not exist. <a href="/">Go back to the homepage</a>.</p>
+            `);
+            console.error(`Invalid path: ${path}`);
         }
     </script>
 </head>
