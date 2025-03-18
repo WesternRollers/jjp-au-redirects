@@ -26,17 +26,24 @@
             '/jjp': 'https://janjucpark.com.au'
         };
 
-        // Force HTTPS redirect
-        if (window.location.protocol !== 'https:') {
-            window.location.href = 'https://' + window.location.host + window.location.pathname;
+        // Function to extract the path without query parameters
+        function getPathWithoutQuery() {
+            return window.location.pathname.split('?')[0].toLowerCase();
+        }
+
+        // Check if the page is running under HTTP, and if so, redirect to HTTPS
+        if (window.location.protocol === 'http:') {
+            window.location.replace('https://' + window.location.host + window.location.pathname + window.location.search);
         } else {
-            // Make path matching case-insensitive
-            const path = window.location.pathname.toLowerCase();
+            // Get the cleaned-up path
+            const path = getPathWithoutQuery();
+
+            // Redirect if the path exists in our redirects object
             if (redirects[path]) {
-                window.location.href = redirects[path];
+                window.location.replace(redirects[path]);
             } else {
-                // Redirect to janjucpark.com.au for unknown paths
-                window.location.href = 'https://janjucpark.com.au';
+                // Redirect to main site if no match is found
+                window.location.replace('https://janjucpark.com.au');
             }
         }
     </script>
