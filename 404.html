@@ -28,23 +28,22 @@
             '/jjp': 'https://janjucpark.com.au'
         };
 
-        // Function to extract the path without query parameters
         function getPathWithoutQuery() {
             return window.location.pathname.split('?')[0].toLowerCase();
         }
 
-        // Check if the page is running under HTTP, and if so, redirect to HTTPS
         if (window.location.protocol === 'http:') {
             window.location.replace('https://' + window.location.host + window.location.pathname + window.location.search);
         } else {
-            // Get the cleaned-up path
             const path = getPathWithoutQuery();
 
-            // Redirect if the path exists in our redirects object
-            if (redirects[path]) {
+            // Exclude .well-known paths from redirect logic
+            if (path.startsWith('/.well-known/')) {
+                // Let GitHub Pages handle this normally
+                console.log("Accessing .well-known path: no redirect triggered.");
+            } else if (redirects[path]) {
                 window.location.replace(redirects[path]);
             } else {
-                // Redirect to main site if no match is found
                 window.location.replace('https://janjucpark.com.au');
             }
         }
