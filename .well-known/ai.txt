@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# This site does not grant permission to train or extract data using AI or LLMs.
+# Contact: admin@janjucpark.com.au
