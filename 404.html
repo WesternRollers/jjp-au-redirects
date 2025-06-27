@@ -37,10 +37,9 @@
         } else {
             const path = getPathWithoutQuery();
 
-            // Exclude .well-known paths from redirect logic
-            if (path.startsWith('/.well-known/')) {
-                // Let GitHub Pages handle this normally
-                console.log("Accessing .well-known path: no redirect triggered.");
+            // Skip redirects for /robots.txt and /.well-known/
+            if (path === '/robots.txt' || path.startsWith('/.well-known/')) {
+                console.log("Accessing a special file path — no redirect.");
             } else if (redirects[path]) {
                 window.location.replace(redirects[path]);
             } else {
