@@ -1,66 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-AU">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <title>Jan Juc Caravan Park Redirect</title>
     <script>
-        const redirects = {
-            '/jsa': 'https://drive.google.com/file/d/1-bgrtQTD1CK8NL5SzAZPuNI6wbAa3Azx/view?usp=sharing',
-            '/emp': 'https://docs.google.com/document/d/14BaM2DcWJz01yNfy60SLHbxc5i503_TG/edit?usp=sharing&ouid=100457028433399156928&rtpof=true&sd=true',
-            '/map': 'https://drive.google.com/file/d/1ahXHNXQ84OUDfcopICX-14gt-y1FDP1k/view?usp=sharing',
-            '/maprules': 'https://drive.google.com/file/d/13Xv09rbDqXuGQ2p1jBLeLcCnRMyA_2Yd/view?usp=sharing',
-            '/pool': 'https://forms.gle/v2WPT7bUkgutGv3RA',
-            '/fire': 'https://forms.gle/ckYEEvtoXG7wy1NV9',
-            '/report': 'https://forms.gle/ZwqRbZkgBGVhXGFS6',
-            '/nom': 'https://forms.gle/tNmM3gu9KyfewC2u8',
-            '/electrical': 'https://forms.gle/hkArWgWAxg8eusmz5',
-            '/incident': 'https://forms.gle/h1s6yt5UQtW6AStf8',
-            '/poolemp': 'https://docs.google.com/document/d/1432iGD2lQPNNEbE35B90FfxbS2t14PPT/edit?usp=sharing&ouid=100457028433399156928&rtpof=true&sd=true',
-            '/parkagreement': 'https://drive.google.com/file/d/14W6ZvAjUGCeyh67puAg3MPLWfuvW9WuP/view?usp=sharing',
-            '/agreement': 'https://drive.google.com/file/d/14W6ZvAjUGCeyh67puAg3MPLWfuvW9WuP/view?usp=sharing',
-            '/agreements': 'https://drive.google.com/file/d/14W6ZvAjUGCeyh67puAg3MPLWfuvW9WuP/view?usp=sharing',
-            '/rules': 'https://drive.google.com/file/d/11TwhpaTPvpldIhP6NkRA4D4eyLFdqYEy/view?usp=sharing',
-            '/sales': 'https://drive.google.com/file/d/1-HbBg1kylCI-25RjMZfS2pp7XGW9Q0Ql/view?usp=sharing',
-            '/sale': 'https://drive.google.com/file/d/1-HbBg1kylCI-25RjMZfS2pp7XGW9Q0Ql/view?usp=sharing',
-            '/regs': 'https://drive.google.com/file/d/1-7YI4S7WCCOeVkDP6ea0b_5BltTFG23f/view?usp=sharing',
-            '/cfa2012': 'https://drive.google.com/file/d/1-DiOjEnyUzOjm80TOgBP_elaw7HLRnST/view?usp=sharing',
-            '/cfa2024': 'https://drive.google.com/file/d/1-Gr-oyNPobh5ZFs-aAm3cwErC7kcW-df/view?usp=sharing',
-            '/instcert': 'https://drive.google.com/file/d/1-ALsZpyoQb8EslZIj4Z4ILZszNEMcs_p/view?usp=sharing',
-            '/instadv': 'https://drive.google.com/file/d/1-6KvXQNvqTPbGm4iTlQxaC3ez1b6c2HN/view?usp=sharing',
-            '/news0625': 'https://drive.google.com/file/d/1FWU6avDITq0hqtfZdq5GOFOVrg-UYJtc/view',
-            '/news0726': 'https://drive.google.com/file/d/1cNe19NzZG_pUqwllJ9bVPHxBjGxXA1e_/view?usp=sharing',
-            '/jjp': 'https://janjucpark.com.au',
-            '/as4970': 'https://drive.google.com/file/d/13-rccLUG9byhp2xIV3uJ9hVkTPu0iaya/view?usp=sharing',
-            '/as4373': 'https://drive.google.com/file/d/1J0y7q_pKfQYvC2SajC-mZgZgQBYYANT2/view?usp=sharing',
-            '/as2303': 'https://drive.google.com/file/d/1mn5uxjzBWjM9xYh-8xRNXtKh9oWaYY5L/view?usp=sharing',
-            '/mis313': 'https://drive.google.com/file/d/12mWVwLoFRB-x-2HHsKzBH5w9iXM1KB0e/view?usp=sharing',
-            '/traq': 'https://drive.google.com/file/d/1-0Cwk_UMcGVO37JKxcCy3bloO3rnq3sh/view?usp=sharing',
-            '/traqform': 'https://drive.google.com/file/d/1H0iKG-WpFZbXw_MiubWQzKKkK51Ri5Nl/view?usp=sharing',
-            '/mis506': 'https://drive.google.com/file/d/1rMYgSyyZFa8m8FhPTqx4BHqZolB3icSC/view?usp=sharing',
-            '/act': 'https://drive.google.com/file/d/12X2pwAD_tiGmUt1nqST3-KgmKoFuHCwd/view?usp=sharing'
-        };
+        (() => {
+            'use strict';
 
-        function getPath() {
-            return window.location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
-        }
+            const fallbackUrl = 'https://janjucpark.com.au';
+            const redirects = Object.freeze({
+                '/jsa': 'https://drive.google.com/file/d/1-bgrtQTD1CK8NL5SzAZPuNI6wbAa3Azx/view?usp=sharing',
+                '/emp': 'https://docs.google.com/document/d/14BaM2DcWJz01yNfy60SLHbxc5i503_TG/view?usp=sharing',
+                '/map': 'https://drive.google.com/file/d/1ahXHNXQ84OUDfcopICX-14gt-y1FDP1k/view?usp=sharing',
+                '/maprules': 'https://drive.google.com/file/d/13Xv09rbDqXuGQ2p1jBLeLcCnRMyA_2Yd/view?usp=sharing',
+                '/pool': 'https://forms.gle/v2WPT7bUkgutGv3RA',
+                '/fire': 'https://forms.gle/ckYEEvtoXG7wy1NV9',
+                '/report': 'https://forms.gle/ZwqRbZkgBGVhXGFS6',
+                '/nom': 'https://forms.gle/tNmM3gu9KyfewC2u8',
+                '/electrical': 'https://forms.gle/hkArWgWAxg8eusmz5',
+                '/incident': 'https://forms.gle/h1s6yt5UQtW6AStf8',
+                '/poolemp': 'https://docs.google.com/document/d/1432iGD2lQPNNEbE35B90FfxbS2t14PPT/view?usp=sharing',
+                '/parkagreement': 'https://drive.google.com/file/d/14W6ZvAjUGCeyh67puAg3MPLWfuvW9WuP/view?usp=sharing',
+                '/agreement': 'https://drive.google.com/file/d/14W6ZvAjUGCeyh67puAg3MPLWfuvW9WuP/view?usp=sharing',
+                '/agreements': 'https://drive.google.com/file/d/14W6ZvAjUGCeyh67puAg3MPLWfuvW9WuP/view?usp=sharing',
+                '/rules': 'https://drive.google.com/file/d/11TwhpaTPvpldIhP6NkRA4D4eyLFdqYEy/view?usp=sharing',
+                '/sales': 'https://drive.google.com/file/d/1-HbBg1kylCI-25RjMZfS2pp7XGW9Q0Ql/view?usp=sharing',
+                '/sale': 'https://drive.google.com/file/d/1-HbBg1kylCI-25RjMZfS2pp7XGW9Q0Ql/view?usp=sharing',
+                '/regs': 'https://drive.google.com/file/d/1-7YI4S7WCCOeVkDP6ea0b_5BltTFG23f/view?usp=sharing',
+                '/cfa2012': 'https://drive.google.com/file/d/1-DiOjEnyUzOjm80TOgBP_elaw7HLRnST/view?usp=sharing',
+                '/cfa2024': 'https://drive.google.com/file/d/1-Gr-oyNPobh5ZFs-aAm3cwErC7kcW-df/view?usp=sharing',
+                '/instcert': 'https://drive.google.com/file/d/1-ALsZpyoQb8EslZIj4Z4ILZszNEMcs_p/view?usp=sharing',
+                '/instadv': 'https://drive.google.com/file/d/1-6KvXQNvqTPbGm4iTlQxaC3ez1b6c2HN/view?usp=sharing',
+                '/news0625': 'https://drive.google.com/file/d/1FWU6avDITq0hqtfZdq5GOFOVrg-UYJtc/view',
+                '/news0726': 'https://drive.google.com/file/d/1cNe19NzZG_pUqwllJ9bVPHxBjGxXA1e_/view?usp=sharing',
+                '/jjp': fallbackUrl,
+                '/as4970': 'https://drive.google.com/file/d/13-rccLUG9byhp2xIV3uJ9hVkTPu0iaya/view?usp=sharing',
+                '/as4373': 'https://drive.google.com/file/d/1J0y7q_pKfQYvC2SajC-mZgZgQBYYANT2/view?usp=sharing',
+                '/as2303': 'https://drive.google.com/file/d/1mn5uxjzBWjM9xYh-8xRNXtKh9oWaYY5L/view?usp=sharing',
+                '/mis313': 'https://drive.google.com/file/d/12mWVwLoFRB-x-2HHsKzBH5w9iXM1KB0e/view?usp=sharing',
+                '/traq': 'https://drive.google.com/file/d/1-0Cwk_UMcGVO37JKxcCy3bloO3rnq3sh/view?usp=sharing',
+                '/traqform': 'https://drive.google.com/file/d/1H0iKG-WpFZbXw_MiubWQzKKkK51Ri5Nl/view?usp=sharing',
+                '/mis506': 'https://drive.google.com/file/d/1rMYgSyyZFa8m8FhPTqx4BHqZolB3icSC/view?usp=sharing',
+                '/act': 'https://drive.google.com/file/d/12X2pwAD_tiGmUt1nqST3-KgmKoFuHCwd/view?usp=sharing'
+            });
 
-        if (window.location.protocol === 'http:') {
-            window.location.replace(
-                'https://' + window.location.host + window.location.pathname + window.location.search
-            );
-        } else {
+            const getPath = () =>
+                window.location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
+
+            if (window.location.protocol === 'http:') {
+                window.location.replace(
+                    `https://${window.location.host}${window.location.pathname}${window.location.search}${window.location.hash}`
+                );
+                return;
+            }
+
             const path = getPath();
 
-            if (path === '/robots.txt' || path.startsWith('/.well-known/')) {
-                console.log('Special path requested. No redirect applied.');
-            } else if (Object.prototype.hasOwnProperty.call(redirects, path)) {
-                window.location.replace(redirects[path]);
-            } else {
-                window.location.replace('https://janjucpark.com.au');
+            // Existing files such as robots.txt and security.txt are served directly by GitHub Pages.
+            // Missing well-known resources should remain 404 responses rather than redirect elsewhere.
+            if (path === '/robots.txt' || path === '/.well-known' || path.startsWith('/.well-known/')) {
+                return;
             }
-        }
+
+            if (Object.prototype.hasOwnProperty.call(redirects, path)) {
+                window.location.replace(redirects[path]);
+                return;
+            }
+
+            const fallback = new URL(fallbackUrl);
+            fallback.search = window.location.search;
+            fallback.hash = window.location.hash;
+            window.location.replace(fallback.toString());
+        })();
     </script>
 </head>
 <body>
+    <p>Redirecting to the requested Jan Juc Caravan Park resource.</p>
     <noscript>
         <p>This link requires JavaScript.</p>
         <p><a href="https://janjucpark.com.au">Continue to Jan Juc Caravan Park</a></p>
