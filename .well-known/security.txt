@@ -1,7 +1,7 @@
 # security.txt for Jan Juc Caravan Park
 
 Contact: mailto:admin@janjucpark.com.au
-Expires: 2026-06-30T23:59:00.000Z
+Expires: 2027-06-30T23:59:00Z
 Preferred-Languages: en
 Canonical: https://jjp.au/.well-known/security.txt
 
